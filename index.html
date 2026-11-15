@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jobify — Αγγελίες εργασίας &amp; μαθητείας για αποφοίτους ΕΠΑΛ</title>
+  <meta name="description" content="Βρες δουλειά ή μαθητεία στην ειδικότητά σου. Αγγελίες από τεχνικά συνεργεία, εργοστάσια και επιχειρήσεις σε όλη την Ελλάδα. Άμεση αίτηση, χωρίς βιογραφικό.">
+  <meta name="theme-color" content="#0F172A">
+  <meta property="og:title" content="Jobify — Δουλειά και μαθητεία για αποφοίτους ΕΠΑΛ">
+  <meta property="og:description" content="Αληθινές τεχνικές θέσεις σε όλη την Ελλάδα. Κάνε αίτηση σε 30 δευτερόλεπτα, χωρίς CV.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="el_GR">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23F59E0B'/%3E%3Cpath d='M35 8 17 36h12l-2 20 20-30H35l2-18Z' fill='%230F172A'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Μετάβαση στο περιεχόμενο</a>
+
+  <!-- Icon sprite -->
+  <svg class="svg-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11l-1 8.5L19.5 10H13l1-8Z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 6.5"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-bookmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16Z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h1M14 8h1M9 12h1M14 12h1M9 16h1M14 16h1"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0 0 4h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5"/><circle cx="16" cy="12" r="1"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3v-5l2-5h14l2 5v5h-2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M3 12h18"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"/><path d="m19 15 .8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15Z"/></symbol>
+    <symbol id="i-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5h16M7 12h10M10 19h4"/></symbol>
+    <symbol id="i-inbox" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11Z"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11l-1 8.5L19.5 10H13l1-8Z"/></symbol>
+  </svg>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Jobify — Αρχική">
+        <span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#i-bolt"></use></svg></span>
+        <span class="brand-name">Job<span>ify</span></span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Κύρια πλοήγηση">
+        <a href="#jobs">Αγγελίες</a>
+        <a href="#jobs" data-apprenticeship-link>Μαθητεία</a>
+        <a href="#employers">Για Επιχειρήσεις</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-primary btn-sm" type="button" data-open-post>
+          <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>
+          <span class="cta-label-full">Ανέβασε Αγγελία</span>
+          <span class="cta-label-short">Αγγελία</span>
+        </button>
+        <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Άνοιγμα μενού">
+          <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="heroTitle">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="hero-eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Αποκλειστικά για αποφοίτους ΕΠΑΛ</p>
+          <h1 id="heroTitle">
+            Βρες δουλειά ή μαθητεία στην ειδικότητά σου —
+            <span class="hero-highlight">χωρίς βαρετά βιογραφικά</span>
+          </h1>
+          <p class="hero-lede">
+            Πραγματικές θέσεις από συνεργεία, εργοστάσια και επιχειρήσεις σε όλη την Ελλάδα.
+            Φίλτραρε με βάση αυτό που ξέρεις και κάνε αίτηση σε 30 δευτερόλεπτα.
+          </p>
+          <ul class="hero-checks" aria-label="Πλεονεκτήματα πλατφόρμας">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> Χωρίς βιογραφικό</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> Χωρίς λογαριασμό</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> Δωρεάν για απόφοιτους</li>
+          </ul>
+          <div class="hero-stats">
+            <div class="stat">
+              <strong id="statJobs">8</strong>
+              <span>ενεργές αγγελίες</span>
+            </div>
+            <div class="stat">
+              <strong id="statCities">6</strong>
+              <span>πόλεις σε όλη την Ελλάδα</span>
+            </div>
+            <div class="stat">
+              <strong>30″</strong>
+              <span>για μια αίτηση</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-aside" aria-label="Πρόσφατες αγγελίες">
+          <div class="live-board">
+            <div class="live-board-head">
+              <div>
+                <p class="live-kicker"><span class="pulse-dot" aria-hidden="true"></span> Ζωντανά τώρα</p>
+                <h2>Νέες θέσεις κοντά σου</h2>
+              </div>
+              <span class="live-count" id="liveCount">8</span>
+            </div>
+            <div class="live-jobs" id="heroJobs"></div>
+            <div class="live-board-foot">
+              <span>Ενημερώνεται σε πραγματικό χρόνο</span>
+              <a href="#jobs">Δες όλες <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+            </div>
+          </div>
+          <div class="floating-badge" aria-hidden="true">
+            <span class="floating-badge-icon"><svg class="icon"><use href="#i-zap"></use></svg></span>
+            <span><strong>Άμεση αίτηση</strong><small>σε 30 δευτερόλεπτα</small></span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="search-wrap" aria-labelledby="searchHeading">
+      <div class="container">
+        <div class="search-panel">
+          <form class="search-form" id="filterForm">
+            <div class="search-form-top">
+              <p class="search-eyebrow" id="searchHeading">
+                <span class="pulse-dot" aria-hidden="true"></span> Έξυπνη αναζήτηση
+              </p>
+              <p class="search-hint">Τα αποτελέσματα φιλτράρονται ζωντανά</p>
+            </div>
+
+            <div class="search-fields">
+              <div class="field field-keyword">
+                <label for="keyword">Λέξη-κλειδί</label>
+                <div class="input-shell">
+                  <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+                  <input type="search" id="keyword" name="keyword" placeholder="π.χ. ηλεκτρολόγος, κλιματισμός…" autocomplete="off">
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="specialtyFilter">Ειδικότητα ΕΠΑΛ</label>
+                <div class="select-shell">
+                  <svg class="icon" aria-hidden="true"><use href="#i-briefcase"></use></svg>
+                  <select id="specialtyFilter" name="specialty">
+                    <option value="">Όλες οι ειδικότητες</option>
+                  </select>
+                  <svg class="icon chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="locationFilter">Περιοχή</label>
+                <div class="select-shell">
+                  <svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg>
+                  <select id="locationFilter" name="location">
+                    <option value="">Όλη η Ελλάδα</option>
+                  </select>
+                  <svg class="icon chevron" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+                </div>
+              </div>
+
+              <div class="field field-toggle">
+                <span class="field-label" id="apprenticeshipLabel">Τύπος απασχόλησης</span>
+                <label class="switch" for="apprenticeshipToggle">
+                  <input type="checkbox" id="apprenticeshipToggle" name="apprenticeship" aria-describedby="apprenticeshipLabel">
+                  <span class="switch-track" aria-hidden="true"></span>
+                  <span class="switch-text">Μόνο Μαθητεία / Πρακτική</span>
+                </label>
+              </div>
+
+              <button class="btn btn-primary search-submit" type="submit">
+                <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+                Αναζήτηση
+              </button>
+            </div>
+
+            <div class="search-extras">
+              <div class="quick-searches">
+                <span class="quick-label">Δημοφιλείς:</span>
+                <div class="quick-chips">
+                  <button type="button" class="chip-btn" data-quick-filter="specialty" data-quick-value="Ηλεκτρολόγος">Ηλεκτρολόγος</button>
+                  <button type="button" class="chip-btn" data-quick-filter="specialty" data-quick-value="Ψυκτικός – Κλιματισμού">Ψυκτικός</button>
+                  <button type="button" class="chip-btn" data-quick-filter="apprenticeship" data-quick-value="">Μαθητεία</button>
+                  <button type="button" class="chip-btn" data-quick-filter="location" data-quick-value="Αθήνα">Αθήνα</button>
+                </div>
+              </div>
+              <p class="secure-note"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg> Δωρεάν για απόφοιτους — χωρίς εγγραφή</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="jobs-section" id="jobs" aria-labelledby="jobsTitle">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Ενεργές αγγελίες</p>
+            <h2 id="jobsTitle">Βρες την επόμενη θέση σου</h2>
+            <p class="section-sub">Επιλεγμένες θέσεις από επιχειρήσεις που προσλαμβάνουν τώρα. Φίλτραρε και κάνε αίτηση με ένα κλικ.</p>
+          </div>
+          <div class="feed-actions">
+            <button class="saved-btn" id="savedToggle" type="button" aria-pressed="false">
+              <svg class="icon" aria-hidden="true"><use href="#i-bookmark"></use></svg>
+              <span>Αποθηκευμένες</span>
+              <span class="saved-count" id="savedCount">0</span>
+            </button>
+            <button class="btn btn-ghost" id="clearFilters" type="button" hidden>
+              <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+              Καθαρισμός φίλτρων
+            </button>
+          </div>
+        </div>
+
+        <div class="feed-meta">
+          <p class="results-count" aria-live="polite">
+            <strong id="resultCount">8</strong>
+            <span id="resultLabel">αγγελίες</span>
+            <span class="results-sep" aria-hidden="true">·</span>
+            <span id="resultsNote">ενεργές σε όλη την Ελλάδα</span>
+          </p>
+          <p class="live-note"><span class="live-dot" aria-hidden="true"></span> Ενημερώνεται σε πραγματικό χρόνο</p>
+        </div>
+
+        <div class="active-filters" id="activeFilters" aria-label="Ενεργά φίλτρα" hidden></div>
+
+        <div class="jobs-grid" id="jobsGrid"></div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <span class="empty-icon"><svg class="icon" aria-hidden="true"><use href="#i-inbox"></use></svg></span>
+          <h3 id="emptyTitle">Δεν βρέθηκαν αγγελίες με αυτά τα κριτήρια</h3>
+          <p id="emptyText">Δοκίμασε να αφαιρέσεις κάποιο φίλτρο ή να αλλάξεις τη λέξη-κλειδί. Οι νέες αγγελίες εμφανίζονται καθημερινά.</p>
+          <button class="btn btn-dark" id="emptyReset" type="button">
+            <svg class="icon" aria-hidden="true"><use href="#i-filter"></use></svg>
+            Καθαρισμός φίλτρων
+          </button>
+        </div>
+
+        <p class="feed-trust">
+          <svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg>
+          Κάθε αγγελία ελέγχεται από την ομάδα μας πριν δημοσιευθεί.
+        </p>
+      </div>
+    </section>
+
+    <section class="steps-section" aria-labelledby="stepsTitle">
+      <div class="container">
+        <div class="steps-header">
+          <p class="section-eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Πώς λειτουργεί</p>
+          <h2 id="stepsTitle">Τρία βήματα. Καμία γραφειοκρατία.</h2>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card" data-step="01">
+            <span class="step-icon"><svg class="icon" aria-hidden="true"><use href="#i-filter"></use></svg></span>
+            <h3>Φίλτραρε έξυπνα</h3>
+            <p>Διάλεξε ειδικότητα, περιοχή και τύπο απασχόλησης. Βλέπεις μόνο θέσεις που έχουν νόημα για εσένα.</p>
+          </article>
+          <article class="step-card" data-step="02">
+            <span class="step-icon"><svg class="icon" aria-hidden="true"><use href="#i-zap"></use></svg></span>
+            <h3>Κάνε αίτηση σε 30″</h3>
+            <p>Μόνο όνομα, τηλέφωνο και τα βασικά σου προσόντα. Χωρίς CV, χωρίς λογαριασμό, χωρίς αναμονή.</p>
+          </article>
+          <article class="step-card" data-step="03">
+            <span class="step-icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg></span>
+            <h3>Μίλα απευθείας</h3>
+            <p>Η επιχείρηση σε καλεί στο κινητό σου. Χωρίς ενδιάμεσους, χωρίς χαμένες ημέρες.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="employer-section" id="employers" aria-labelledby="employersTitle">
+      <div class="container">
+        <div class="employer-panel">
+          <div class="employer-copy">
+            <p class="section-eyebrow section-eyebrow--light"><span class="eyebrow-line" aria-hidden="true"></span> Για επιχειρήσεις</p>
+            <h2 id="employersTitle">Ψάχνεις άνθρωπο που ξέρει τη δουλειά;</h2>
+            <p class="employer-lede">Δημοσίευσε δωρεάν αγγελία και δέξου αιτήσεις από απόφοιτους ΕΠΑΛ με πραγματική εκπαίδευση στην ειδικότητα. Χωρίς μεσάζοντες και περιττά βιογραφικά.</p>
+            <ul class="employer-list">
+              <li><span class="check-dot"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span> Αγγελία έτοιμη σε 2 λεπτά — χωρίς λογιστήρια</li>
+              <li><span class="check-dot"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span> Στοχευμένο κοινό σε τεχνικές ειδικότητες</li>
+              <li><span class="check-dot"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span> Άμεση ειδοποίηση με κάθε αίτηση</li>
+            </ul>
+            <div class="employer-actions">
+              <button class="btn btn-primary" type="button" data-open-post>
+                <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>
+                Δημοσίευση αγγελίας
+              </button>
+              <a class="btn btn-outline-light" href="#stepsTitle">Δες πώς λειτουργεί</a>
+            </div>
+          </div>
+
+          <aside class="employer-aside" aria-label="Μαρτυρία επιχείρησης">
+            <span class="quote-mark" aria-hidden="true">“</span>
+            <blockquote>
+              <p>Δημοσιεύσαμε την αγγελία το πρωί και μέχρι το απόγευμα είχαμε τρεις σοβαρές αιτήσεις. Ο ψυκτικός ξεκίνησε σε δύο ημέρες.</p>
+              <footer class="quote-author">
+                <span class="author-avatar" aria-hidden="true">ΘΚ</span>
+                <span>
+                  <strong>Θανάσης Κ.</strong>
+                  <small>Ιδιοκτήτης, ThermoCool · Θεσσαλονίκη</small>
+                </span>
+              </footer>
+            </blockquote>
+            <div class="employer-stats">
+              <div><strong>48 ώρες</strong><span>μέση πρώτη επικοινωνία</span></div>
+              <div><strong>0€</strong><span>κόστος δημοσίευσης</span></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="#top" aria-label="Jobify — Αρχική">
+            <span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#i-bolt"></use></svg></span>
+            <span class="brand-name">Job<span>ify</span></span>
+          </a>
+          <p>Η πλατφόρμα που φέρνει κοντά αποφοίτους ΕΠΑΛ και επιχειρήσεις που εκτιμούν την πραγματική τεχνική γνώση.</p>
+          <p class="footer-badge"><span class="live-dot" aria-hidden="true"></span> Νέες αγγελίες κάθε εβδομάδα</p>
+        </div>
+
+        <nav class="footer-col" aria-label="Πλοήγηση υποσέλιδου">
+          <h3>Πλοήγηση</h3>
+          <a href="#jobs">Όλες οι αγγελίες</a>
+          <a href="#jobs" data-apprenticeship-link>Μαθητεία &amp; πρακτική</a>
+          <a href="#stepsTitle">Πώς λειτουργεί</a>
+        </nav>
+
+        <nav class="footer-col" aria-label="Σύνδεσμοι επιχειρήσεων">
+          <h3>Για επιχειρήσεις</h3>
+          <button type="button" class="footer-link" data-open-post>Δημοσίευση αγγελίας</button>
+          <a href="#employers">Γιατί Jobify</a>
+          <a href="mailto:info@jobify.gr">Επικοινωνία</a>
+        </nav>
+
+        <div class="footer-col footer-contact">
+          <h3>Επικοινωνία</h3>
+          <a href="mailto:info@jobify.gr" class="contact-line">
+            <svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg>
+            info@jobify.gr
+          </a>
+          <p class="contact-line">
+            <svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg>
+            Αθήνα, Ελλάδα
+          </p>
+          <p class="footer-note">Απαντάμε εντός 24 ωρών, Δευτέρα–Παρασκευή.</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> Jobify. Όλα τα δικαιώματα διατηρούνται.</p>
+        <p>Φτιαγμένο για τα τεχνικά επαγγέλματα της Ελλάδας.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal: Άμεση αίτηση -->
+  <div class="modal" id="applyModal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="applyTitle" aria-describedby="applySubtitle">
+      <div class="modal-head">
+        <div class="modal-head-copy">
+          <p class="modal-kicker"><svg class="icon" aria-hidden="true"><use href="#i-zap"></use></svg> Χωρίς CV · Χωρίς λογαριασμό</p>
+          <h2 id="applyTitle">Άμεση Αίτηση σε 30″</h2>
+          <p class="modal-sub" id="applySubtitle">Συμπλήρωσε τα βασικά και η επιχείρηση θα επικοινωνήσει μαζί σου.</p>
+        </div>
+        <div class="modal-head-actions">
+          <span class="modal-time"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg> ~30″</span>
+          <button type="button" class="icon-btn" data-close-modal aria-label="Κλείσιμο παραθύρου αίτησης">
+            <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div id="applyFormView">
+          <div class="apply-job-summary">
+            <span class="company-logo" id="applyLogo" data-tone="amber" aria-hidden="true"><span id="applyLogoLetter">Π</span></span>
+            <div class="apply-summary-main">
+              <p class="apply-summary-title" id="applyJobTitle">Ηλεκτρολόγος Εγκαταστάσεων</p>
+              <p class="apply-summary-meta"><span id="applyJobCompany">Παπαδόπουλος Ηλεκτρολογική</span><span aria-hidden="true">·</span><span id="applyJobLocation">Αθήνα</span></p>
+            </div>
+            <span class="apply-summary-salary" id="applyJobSalary">950€ – 1.200€ καθαρά</span>
+          </div>
+
+          <div class="license-note" id="licenseNote" hidden>
+            <svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg>
+            <p>Η θέση απαιτεί <strong>Άδεια Ασκήσεως Επαγγέλματος</strong>. Δήλωσέ την παρακάτω αν τη διαθέτεις.</p>
+          </div>
+
+          <form id="applyForm" novalidate>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="applyName">Ονοματεπώνυμο <span class="req" aria-hidden="true">*</span></label>
+                <input class="form-control" type="text" id="applyName" name="name" autocomplete="name" placeholder="π.χ. Γιάννης Παπαδόπουλος" aria-describedby="applyNameError" data-autofocus required>
+                <p class="field-error" id="applyNameError" role="alert"></p>
+              </div>
+
+              <div class="form-field">
+                <label for="applyPhone">Τηλέφωνο <span class="req" aria-hidden="true">*</span></label>
+                <input class="form-control" type="tel" id="applyPhone" name="phone" autocomplete="tel" inputmode="tel" placeholder="π.χ. 691 234 5678" aria-describedby="applyPhoneError" required>
+                <p class="field-error" id="applyPhoneError" role="alert"></p>
+              </div>
+
+              <div class="form-field form-field--full">
+                <label for="applySpecialty">Ειδικότητα ΕΠΑΛ <span class="req" aria-hidden="true">*</span></label>
+                <select class="form-control" id="applySpecialty" name="specialty" aria-describedby="applySpecialtyError" required>
+                  <option value="">Επίλεξε ειδικότητα</option>
+                </select>
+                <p class="field-error" id="applySpecialtyError" role="alert"></p>
+              </div>
+
+              <div class="form-field form-field--full">
+                <span class="form-label">Πρόσθετα προσόντα</span>
+                <div class="check-grid">
+                  <label class="check-card" for="applyLicense">
+                    <input type="checkbox" id="applyLicense" name="license">
+                    <span class="check-box" aria-hidden="true"><svg class="icon"><use href="#i-check"></use></svg></span>
+                    <span class="check-text">
+                      <strong>Έχω Άδεια Ασκήσεως Επαγγέλματος</strong>
+                      <span>Για εργασίες που την απαιτούν</span>
+                    </span>
+                  </label>
+                  <label class="check-card" for="applyDriving">
+                    <input type="checkbox" id="applyDriving" name="driving">
+                    <span class="check-box" aria-hidden="true"><svg class="icon"><use href="#i-check"></use></svg></span>
+                    <span class="check-text">
+                      <strong>Έχω Δίπλωμα Οδήγησης</strong>
+                      <span>Χρήσιμο για εξωτερικές εργασίες</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-footer">
+              <p class="privacy-note">
+                <svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg>
+                Τα στοιχεία σου αποστέλλονται μόνο στην επιχείρηση για αυτή τη θέση.
+              </p>
+              <button class="btn btn-primary btn-submit" type="submit" id="applySubmit">
+                Αποστολή αίτησης
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="success-panel" id="applySuccess" hidden>
+          <span class="success-icon">
+            <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+          </span>
+          <p class="success-kicker">Η αίτηση καταχωρήθηκε</p>
+          <h3>Η αίτησή σου στάλθηκε!</h3>
+          <p>Η επιχείρηση θα επικοινωνήσει μαζί σου στο τηλέφωνο που δήλωσες. Καλή επιτυχία!</p>
+          <div class="success-summary">
+            <span id="successJobTitle">Ηλεκτρολόγος Εγκαταστάσεων</span>
+            <strong id="successCompany">Παπαδόπουλος Ηλεκτρολογική</strong>
+          </div>
+          <div class="success-actions">
+            <button class="btn btn-dark" type="button" id="closeSuccess">Τέλεια, ευχαριστώ</button>
+            <button class="btn btn-text" type="button" id="browseMore">Δες κι άλλες αγγελίες</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Δημοσίευση αγγελίας -->
+  <div class="modal" id="postModal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-dialog modal-dialog--wide" role="dialog" aria-modal="true" aria-labelledby="postTitle" aria-describedby="postSubtitle">
+      <div class="modal-head">
+        <div class="modal-head-copy">
+          <p class="modal-kicker"><svg class="icon" aria-hidden="true"><use href="#i-building"></use></svg> Για επιχειρήσεις · Δωρεάν</p>
+          <h2 id="postTitle">Δημοσίευση Αγγελίας</h2>
+          <p class="modal-sub" id="postSubtitle">Συμπλήρωσε τα βασικά. Η αγγελία θα εμφανιστεί άμεσα στην αρχική σελίδα.</p>
+        </div>
+        <div class="modal-head-actions">
+          <button type="button" class="icon-btn" data-close-modal aria-label="Κλείσιμο παραθύρου δημοσίευσης">
+            <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <form id="postForm" novalidate>
+          <div class="form-grid">
+            <div class="form-field form-field--full">
+              <label for="postTitleInput">Τίτλος θέσης <span class="req" aria-hidden="true">*</span></label>
+              <input class="form-control" type="text" id="postTitleInput" name="title" placeholder="π.χ. Ηλεκτρολόγος Εγκαταστάσεων" maxlength="80" aria-describedby="postTitleError" data-autofocus required>
+              <p class="field-error" id="postTitleError" role="alert"></p>
+            </div>
+
+            <div class="form-field form-field--full">
+              <label for="postCompany">Επωνυμία επιχείρησης <span class="req" aria-hidden="true">*</span></label>
+              <input class="form-control" type="text" id="postCompany" name="company" placeholder="π.χ. Παπαδόπουλος Ηλεκτρολογική" maxlength="60" aria-describedby="postCompanyError" required>
+              <p class="field-error" id="postCompanyError" role="alert"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="postSpecialty">Ειδικότητα ΕΠΑΛ <span class="req" aria-hidden="true">*</span></label>
+              <select class="form-control" id="postSpecialty" name="specialty" aria-describedby="postSpecialtyError" required>
+                <option value="">Επίλεξε ειδικότητα</option>
+              </select>
+              <p class="field-error" id="postSpecialtyError" role="alert"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="postLocation">Περιοχή <span class="req" aria-hidden="true">*</span></label>
+              <select class="form-control" id="postLocation" name="location" aria-describedby="postLocationError" required>
+                <option value="">Επίλεξε περιοχή</option>
+              </select>
+              <p class="field-error" id="postLocationError" role="alert"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="postType">Τύπος απασχόλησης <span class="req" aria-hidden="true">*</span></label>
+              <select class="form-control" id="postType" name="type" aria-describedby="postTypeError" required>
+                <option value="">Επίλεξε τύπο</option>
+                <option value="Πλήρης">Πλήρης απασχόληση</option>
+                <option value="Μερική">Μερική απασχόληση</option>
+                <option value="Μαθητεία / Πρακτική">Μαθητεία / Πρακτική</option>
+              </select>
+              <p class="field-error" id="postTypeError" role="alert"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="postSalary">Μισθός <span class="optional">(προαιρετικό)</span></label>
+              <input class="form-control" type="text" id="postSalary" name="salary" placeholder="π.χ. 950€ – 1.200€ καθαρά" maxlength="50">
+              <p class="field-hint">Αν το αφήσεις κενό, θα εμφανιστεί «Κατόπιν συζήτησης».</p>
+            </div>
+
+            <div class="form-field form-field--full">
+              <div class="label-row">
+                <label for="postDescription">Σύντομη περιγραφή <span class="req" aria-hidden="true">*</span></label>
+                <span class="char-count" id="postDescCount">0/240</span>
+              </div>
+              <textarea class="form-control" id="postDescription" name="description" rows="4" maxlength="240" placeholder="Τι θα κάνει ο εργαζόμενος, τι προσφέρει η επιχείρηση και τι είναι σημαντικό να γνωρίζει." aria-describedby="postDescriptionError" required></textarea>
+              <p class="field-error" id="postDescriptionError" role="alert"></p>
+            </div>
+
+            <div class="form-field form-field--full">
+              <span class="form-label">Σήματα αγγελίας</span>
+              <div class="check-grid">
+                <label class="check-card" for="postLicense">
+                  <input type="checkbox" id="postLicense" name="license">
+                  <span class="check-box" aria-hidden="true"><svg class="icon"><use href="#i-check"></use></svg></span>
+                  <span class="check-text">
+                    <strong>Απαιτείται Άδεια Ασκήσεως</strong>
+                    <span>π.χ. ηλεκτρολόγος, ψυκτικός</span>
+                  </span>
+                </label>
+                <label class="check-card" for="postUrgent">
+                  <input type="checkbox" id="postUrgent" name="urgent">
+                  <span class="check-box" aria-hidden="true"><svg class="icon"><use href="#i-check"></use></svg></span>
+                  <span class="check-text">
+                    <strong>Άμεση πρόσληψη</strong>
+                    <span>Εμφανίζεται με μπλε σήμα</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-footer">
+            <p class="privacy-note">
+              <svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg>
+              Δημοσίευση χωρίς χρέωση. Η αγγελία εμφανίζεται αμέσως στο feed.
+            </p>
+            <button class="btn btn-primary btn-submit" type="submit">
+              <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>
+              Δημοσίευση αγγελίας
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-stack" id="toastStack" role="status" aria-live="polite" aria-atomic="false"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
