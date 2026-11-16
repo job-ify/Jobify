@@ -24,8 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($identifier === '' || $password === '') {
         $errors[] = 'Παρακαλώ συμπληρώστε όλα τα πεδία.';
     } else {
-        $stmt = $pdo->prepare('SELECT id, username, email, password FROM users WHERE email = :identifier OR username = :identifier LIMIT 1');
-        $stmt->execute([':identifier' => $identifier]);
+        $stmt = $pdo->prepare('SELECT id, username, email, password FROM users WHERE email = :identifier_email OR username = :identifier_username LIMIT 1');
+        $stmt->execute([
+            ':identifier_email' => $identifier,
+            ':identifier_username' => $identifier,
+        ]);
         $user = $stmt->fetch();
 
         if ($user && password_verify($password, $user['password'])) {
