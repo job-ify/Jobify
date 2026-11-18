@@ -8,6 +8,8 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $username = $_SESSION['username'] ?? 'Χρήστης';
+$email = $_SESSION['email'] ?? '';
+$jsonFlags = JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT;
 ?>
 <!DOCTYPE html>
 <html lang="el">
@@ -32,5 +34,17 @@ $username = $_SESSION['username'] ?? 'Χρήστης';
             </div>
         </div>
     </main>
+
+    <script>
+        /* Mirror the PHP session to localStorage so index.html can render the authenticated header. */
+        try {
+            localStorage.setItem('jobify:authUser', JSON.stringify({
+                name: <?php echo json_encode($username, $jsonFlags); ?>,
+                email: <?php echo json_encode($email, $jsonFlags); ?>
+            }));
+        } catch (error) {
+            /* Storage unavailable: the PHP session still remains the source of truth. */
+        }
+    </script>
 </body>
 </html>

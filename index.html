@@ -60,9 +60,25 @@
       </nav>
 
       <div class="header-actions">
-        <a class="btn btn-ghost btn-sm" href="login.php">Σύνδεση</a>
-        <a class="btn btn-primary btn-sm" href="register.php">Εγγραφή</a>
-        <a class="btn btn-ghost btn-sm" href="dashboard.php">Λογαριασμός</a>
+        <div class="auth-guest" id="guestAuthActions">
+          <a class="btn btn-ghost btn-sm" href="login.php">Σύνδεση</a>
+          <a class="btn btn-primary btn-sm" href="register.php">Εγγραφή</a>
+        </div>
+
+        <div class="auth-user hidden" id="userAuthActions">
+          <a class="auth-user-link" href="dashboard.php" id="authUserLink" aria-label="Ο λογαριασμός μου">
+            <span class="auth-avatar" id="authUserAvatar" aria-hidden="true">Χ</span>
+            <span class="auth-user-meta">
+              <span class="auth-user-name" id="authUserName">Χρήστης</span>
+              <span class="auth-user-email" id="authUserEmail"></span>
+            </span>
+          </a>
+          <button class="btn btn-ghost btn-sm" type="button" id="logoutButton">
+            <svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg>
+            <span>Αποσύνδεση</span>
+          </button>
+        </div>
+
         <button class="btn btn-primary btn-sm" type="button" data-open-post>
           <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>
           <span class="cta-label-full">Ανέβασε Αγγελία</span>

@@ -52,6 +52,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Σύνδεση | Jobify</title>
     <link rel="stylesheet" href="style.css">
+    <?php if (isset($_GET['loggedout']) && $_GET['loggedout'] === '1'): ?>
+        <script>
+            /* Keep index.html in sync when the session was destroyed on the server. */
+            try { localStorage.removeItem('jobify:authUser'); } catch (error) {}
+        </script>
+    <?php endif; ?>
 </head>
 <body class="auth-page">
     <main class="auth-container">
