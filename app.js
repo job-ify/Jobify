@@ -190,6 +190,13 @@ const els = {
   activeFilters: document.getElementById("activeFilters"),
   savedToggle: document.getElementById("savedToggle"),
   savedCount: document.getElementById("savedCount"),
+  guestAuthActions: document.getElementById("guestAuthActions"),
+  userAuthActions: document.getElementById("userAuthActions"),
+  authUserLink: document.getElementById("authUserLink"),
+  authUserAvatar: document.getElementById("authUserAvatar"),
+  authUserName: document.getElementById("authUserName"),
+  authUserEmail: document.getElementById("authUserEmail"),
+  logoutButton: document.getElementById("logoutButton"),
   heroJobs: document.getElementById("heroJobs"),
   liveCount: document.getElementById("liveCount"),
   statJobs: document.getElementById("statJobs"),
@@ -305,6 +312,101 @@ function persistSavedJobs() {
     /* Storage may be unavailable (private mode). Saving stays in-memory. */
   }
 }
+
+/* ---------- Authentication state ---------- */
+
+const AUTH_STORAGE_KEY = "jobify:authUser";
+
+function getAuthUser() {
+  try {
+    const raw = localStorage.getItem(AUTH_STORAGE_KEY);
+    if (!raw) return null;
+
+    const data = JSON.parse(raw);
+    if (!data || typeof data !== "object") return null;
+
+    const name = typeof data.name === "string" ? data.name.trim() : "";
+    const email = typeof data.email === "string" ? data.email.trim() : "";
+    if (!name && !email) return null;
+
+    return { name: name || email.split("@")[0] || "Χρήστης", email };
+  } catch {
+    return null;
+  }
+}
+
+function setAuthUser(user) {
+  try {
+    if (!user) {
+      localStorage.removeItem(AUTH_STORAGE_KEY);
+    } else {
+      localStorage.setItem(
+        AUTH_STORAGE_KEY,
+        JSON.stringify({
+          name: String(user.name ?? "").trim(),
+          email: String(user.email ?? "").trim()
+        })
+      );
+    }
+  } catch {
+    /* Storage may be unavailable (private mode); auth stays in memory. */
+  }
+
+  updateAuthUI();
+}
+
+function clearAuthUser() {
+  setAuthUser(null);
+}
+
+function updateAuthUI() {
+  const user = getAuthUser();
+  const isAuthenticated = Boolean(user);
+
+  /* Guest buttons and the user badge are mutually exclusive. */
+  els.guestAuthActions?.classList.toggle("hidden", isAuthenticated);
+  els.userAuthActions?.classList.toggle("hidden", !isAuthenticated);
+
+  if (!isAuthenticated) return;
+
+  const displayName = user.name || user.email;
+  const initial = displayName.trim().charAt(0).toLocaleUpperCase("el") || "Χ";
+
+  if (els.authUserName) els.authUserName.textContent = displayName;
+  if (els.authUserAvatar) els.authUserAvatar.textContent = initial;
+  if (els.authUserEmail) {
+    els.authUserEmail.textContent = user.email;
+    els.authUserEmail.hidden = !user.email;
+  }
+  if (els.authUserLink) {
+    const label = user.email ? `${displayName} · ${user.email}` : displayName;
+    els.authUserLink.setAttribute("aria-label", `Ο λογαριασμός μου — ${label}`);
+    els.authUserLink.title = label;
+  }
+}
+
+function logoutUser() {
+  clearAuthUser();
+  showToast({
+    title: "Αποσύνδεση",
+    message: "Αποσυνδεθήκατε από τον λογαριασμό σας.",
+    variant: "info",
+    duration: 4000
+  });
+
+  /* Destroy the PHP session as well, without leaving the board. */
+  if (window.fetch && window.location.protocol.startsWith("http")) {
+    window.fetch("logout.php", { method: "POST", credentials: "same-origin" }).catch(() => {});
+  }
+}
+
+/* Other pages can call these right after a login/register/logout action. */
+window.JobifyAuth = {
+  get: getAuthUser,
+  set: setAuthUser,
+  clear: clearAuthUser,
+  updateUI: updateAuthUI
+};
 
 /* ---------- Toasts ---------- */
 
@@ -903,6 +1005,9 @@ function bindEvents() {
     if (!els.siteHeader.contains(event.target)) closeMobileNav();
   });
 
+  /* Auth: clear the session state and restore the guest actions at once */
+  els.logoutButton?.addEventListener("click", logoutUser);
+
   /* Open post modal from all CTA locations */
   document.querySelectorAll("[data-open-post]").forEach((button) => {
     button.addEventListener("click", openPostModal);
@@ -1226,6 +1331,20 @@ function init() {
   renderAll();
   bindEvents();
   bindFormEvents();
+
+  /* Authoritative auth render on load. */
+  updateAuthUI();
+
+  /* Keep the header in sync across tabs, bfcache returns and PHP redirects. */
+  window.addEventListener("storage", (event) => {
+    if (event.key === AUTH_STORAGE_KEY || event.key === null) updateAuthUI();
+  });
+  window.addEventListener("pageshow", updateAuthUI);
+  document.addEventListener("jobify:auth-changed", updateAuthUI);
 }
 
-init();
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init, { once: true });
+} else {
+  init();
+}
